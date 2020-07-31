@@ -14,9 +14,6 @@ import java.util.Date;
 public interface URLRepository
         extends CrudRepository<URLEntity, Long> {
 
-    //@Query("delete from URLEntity ue where ue.created<CURRENT_TIMESTAMP- INTERVAL '3600' SECOND ")
-    //public void deleteTimeout();
-
     @Transactional
     @Modifying
     @Query("delete from URLEntity ue where ue.created<:timeWindow ")
