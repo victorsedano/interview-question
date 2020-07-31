@@ -14,11 +14,11 @@ public class DeleteTimeoutData {
     @Autowired
     URLService service;
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 18000000)
     public void cronJobSch() {
         try {
             Date timeWindow = new Date();
-            timeWindow.setTime(new Date().getTime() - 10000);
+            timeWindow.setTime(new Date().getTime() - 18000000);
             service.selectTimeoutCreated(timeWindow);
         } catch (RecordNotFoundException e) {
             e.printStackTrace();
